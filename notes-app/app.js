@@ -1,14 +1,6 @@
-const sum = require("./utils.js");
-
-// const name = "Hrishabh";
-console.log(sum(4, 5));
-
-/*
-IMPORTANT:
-1. Every file has its own scope
-*/
-
-// Challenge
-
+const validator = require("validator");
 const getNotes = require("./notes");
+
+console.log(validator.isEmail("hrishabh507@gmail.com"));
+console.log(validator.isURL("https:/gmail.com"));
 console.log(getNotes());
