@@ -1,15 +1,14 @@
-const fs = require("fs");
+const sum = require("./utils.js");
 
-fs.writeFileSync("notes.txt", "My name is Hrishabh Jain.");
+// const name = "Hrishabh";
+console.log(sum(4, 5));
 
 /*
-
-Challenge: Append a message to notes.txt
-
-1. Use appendFileSync to append to the file
-2. Run the script
-3. Check your work by opening the file and viewing the appended text.
-
+IMPORTANT:
+1. Every file has its own scope
 */
 
-fs.appendFileSync("notes.txt", " How are you, bro?");
+// Challenge
+
+const getNotes = require("./notes");
+console.log(getNotes());
