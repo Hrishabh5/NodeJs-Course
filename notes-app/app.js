@@ -1,6 +1,8 @@
-const validator = require("validator");
-const chalk = require("chalk");
 const getNotes = require("./notes");
 
-console.log(getNotes());
-console.log("npm " + chalk.bgRed.black("ERR"));
+const command = process.argv[2];
+if (command === "add") {
+  console.log("Adding a note!");
+} else if (command === "remove") {
+  console.log("Removing a note!");
+}
