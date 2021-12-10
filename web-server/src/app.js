@@ -15,19 +15,25 @@ app.get("", (req, res))
 */
 
 app.get("", (req, res) => {
-  res.send("Hello Express!");
+  res.send("<h1>Weather</h1>");
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help page");
+  res.send({
+    name: "Hrishabh Jain",
+    age: 20,
+  });
 });
 
 app.get("/about", (req, res) => {
-  res.send("About us");
+  res.send("<h1>About</h1>");
 });
 
 app.get("/weather", (req, res) => {
-  res.send("Weather Forecast");
+  res.send({
+    location: "India",
+    age: "Clear!",
+  });
 });
 
 // listen method starts up the server on port provided as the first argument
