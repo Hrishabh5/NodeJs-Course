@@ -1,6 +1,8 @@
+const path = require("path");
 const express = require("express");
 
 const app = express(); // we are storing the complete express application in "app"
+const publicDir = path.join(__dirname, "..", "/public");
 
 // app.com
 // app.com/help
@@ -14,20 +16,12 @@ app.get("", (req, res))
 -- res -> (response) Contains a bunch of methods which will customize what we are gonna send back to the requester
 */
 
-app.get("", (req, res) => {
-  res.send("<h1>Weather</h1>");
-});
+app.use(express.static(publicDir));
 
-app.get("/help", (req, res) => {
-  res.send({
-    name: "Hrishabh Jain",
-    age: 20,
-  });
-});
-
-app.get("/about", (req, res) => {
-  res.send("<h1>About</h1>");
-});
+// This will never be executed now
+// app.get("", (req, res) => {
+//   res.send("<h1>Weather</h1>");
+// });
 
 app.get("/weather", (req, res) => {
   res.send({
