@@ -7,18 +7,18 @@ const forecast = (latitude, longitude, callback) => {
     "," +
     longitude;
 
-  request({ url: url, json: true }, (error, response) => {
+  request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to location services!", undefined);
-    } else if (response.body.error) {
+    } else if (body.error) {
       callback("Unable to find the location!", undefined);
     } else {
       const str =
-        response.body.current.weather_descriptions[0] +
+        body.current.weather_descriptions[0] +
         ". It is currently, " +
-        response.body.current.temperature +
+        body.current.temperature +
         " degrees out. The cloud cover is " +
-        response.body.current.cloudcover +
+        body.current.cloudcover +
         "%.";
       callback(undefined, str);
     }
