@@ -20,7 +20,7 @@ app.use(express.static(publicDir));
 app.get("/", (req, res) => {
   // render is used for rendering views
   res.render("index", {
-    title: "Weather Application",
+    title: "Weather App",
     name: "Hrishabh Jain",
   });
 });
