@@ -48,6 +48,30 @@ app.get("/weather", (req, res) => {
   });
 });
 
+// app.get("/help/*", (req, res) => {
+//   res.send("Help page not found!");
+// });
+
+// app.get("*", (req, res) => {
+//   res.send("My 404 page");
+// });
+
+app.get("/help/*", (req, res) => {
+  res.render("help404", {
+    title: "404",
+    name: "Hrishabh Jain",
+    message: "Help page not found!",
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    name: "Hrishabh Jain",
+    message: "Page not found!",
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server is up on port 3000!");
 });
