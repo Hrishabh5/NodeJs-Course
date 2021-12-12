@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
+const e = require("express");
 
 const app = express(); // we are storing the complete express application in "app"
 
@@ -42,11 +43,28 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
+  if (!req.query.address) {
+    return res.send({
+      error: "You must provide the address!",
+    });
+  }
   res.send({
-    location: "India",
-    age: "Clear!",
+    location: req.query.address,
+    forecast: "Clear!",
   });
 });
+
+// app.get("/products", (req, res) => {
+//   if (!req.query.product) {
+//     return res.send({
+//       error: "You must provide a product name",
+//     });
+//   }
+//   console.log(req.query);
+//   res.send({
+//     products: [],
+//   });
+// });
 
 // app.get("/help/*", (req, res) => {
 //   res.send("Help page not found!");
