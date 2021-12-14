@@ -45,3 +45,33 @@ header a:hover {
 .myImage {
   width: 30%;
 }
+
+.location {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.forecast {
+  font-size: 1.4rem;
+}
+
+.loader {
+  height: 2.5rem;
+}
+
+input {
+  border: 1px solid rgb(160, 160, 160);
+  padding: 0.5rem;
+  outline: none;
+  width: 15rem;
+}
+
+button {
+  border: 1px solid rgb(160, 160, 160);
+  padding: 0.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #d4d4d4;
+}
